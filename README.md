@@ -15,6 +15,8 @@ md
 The **Mood-Based Recipe Recommender** is a full-stack MERN web application that suggests recipes based on a user's **current mood** and **real-time weather conditions**.
 
 The goal of this project is to combine **user emotions**, **weather intelligence**, and **personalization** to enhance food discovery.
+
+
 🟢 STEP 2: ADD FEATURES SECTION (VERY IMPORTANT)
 md
 
