@@ -1,16 +1,15 @@
 const Recipe = require("../models/Recipe");
 
-exports.getRecipes = async (req, res) => {
-  const { mood, weatherType } = req.query;
+const getRecipes = async (req, res) => {
+  const { mood, weather } = req.query;
 
-  try {
-    const recipes = await Recipe.find({
-      mood: mood,
-      weatherType: weatherType
-    });
+  let filter = {};
 
-    res.json(recipes);
-  } catch (error) {
-    res.status(500).json({ message: "Server Error" });
-  }
+  if (mood) filter.mood = mood;
+  if (weather) filter.weather = weather;
+
+  const recipes = await Recipe.find(filter);
+  res.json(recipes);
 };
+
+module.exports = { getRecipes };
